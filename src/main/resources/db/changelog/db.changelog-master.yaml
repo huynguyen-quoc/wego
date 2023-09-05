@@ -1,0 +1,5 @@
+databaseChangeLog:
+  - include:
+      file: db/changelog/db.changelog-add-car-park-table.yaml
+  - include:
+      file: db/changelog/db.changelog-add-availability-table.yaml

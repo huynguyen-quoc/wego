@@ -1,0 +1,23 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: huy.nguyen
+      changes:
+        - createTable:
+            tableName: car_park_information
+            columns:
+              - column:
+                  name: car_park_number
+                  type: VARCHAR(255)
+              - column:
+                  name: address
+                  type: VARCHAR(255)
+              - column:
+                  name: latitude
+                  type: DECIMAL(15, 7)
+              - column:
+                  name: longitude
+                  type: DECIMAL(15, 7)
+              - column:
+                  name: coordinates
+                  type: POINT
