@@ -67,6 +67,8 @@ Before you begin, ensure you have the following installed:
    Run below command to ensure all services running correctly.
    ```
     docker-compose ps
+5. Check configuration `com.huynguyen.wego.import.enabled=true` 
+6. For the first time wait for the importing process finished before start call api. It can take around 4-5 minutes.
 
 ## How to run test
 
