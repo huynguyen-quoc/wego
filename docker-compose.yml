@@ -14,7 +14,7 @@ services:
       retries: 10
     volumes:
       - db:/var/lib/mysql
-  car-parks:
+  car-park:
     build:
       context: .
       dockerfile: Dockerfile
