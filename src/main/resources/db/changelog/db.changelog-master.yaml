@@ -3,3 +3,5 @@ databaseChangeLog:
       file: db/changelog/db.changelog-add-car-park-table.yaml
   - include:
       file: db/changelog/db.changelog-add-availability-table.yaml
+  - include:
+      file: db/changelog/db.changelog-add-index-car-park-table.yaml

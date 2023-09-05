@@ -9,15 +9,25 @@ databaseChangeLog:
               - column:
                   name: car_park_number
                   type: VARCHAR(255)
+                  constraints:
+                    primaryKey: true
               - column:
                   name: address
                   type: VARCHAR(255)
+                  constraints:
+                    nullable: false
               - column:
                   name: latitude
                   type: DECIMAL(15, 7)
+                  constraints:
+                    nullable: false
               - column:
                   name: longitude
                   type: DECIMAL(15, 7)
+                  constraints:
+                    nullable: false
               - column:
                   name: coordinates
                   type: POINT
+                  constraints:
+                    nullable: false

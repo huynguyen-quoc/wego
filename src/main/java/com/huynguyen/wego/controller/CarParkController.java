@@ -11,6 +11,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
@@ -22,6 +23,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping(value = "/carparks")
 @RequiredArgsConstructor
+@Slf4j
 public class CarParkController {
 
     private final CarParkService carParkService;
@@ -36,9 +38,11 @@ public class CarParkController {
         @RequestParam(value = "page", defaultValue = "1", required = false) int page,
         @RequestParam(value = "per_page", defaultValue = "50", required = false) int perPage) {
         Pageable pageable = DEFAULT_PAGE;
-        if (page > 1 && perPage <= 50) {
+        if (page >= 1 && perPage <= 50) {
             pageable = PageRequest.of(page - 1, perPage);
         }
+        log.info("start search car park for page=[{}] perPage=[{}] longitude=[{}] latitude=[{}]", page, page,
+            centralLongitude, centralLatitude);
         Page<CarParkEntity> carParkEntities = carParkService.search(centralLatitude, centralLongitude, pageable);
         Map<String, CarParkInfoWithTotalAvailableLots> carParkInfoWithTotalAvailableLotsMap = new HashMap<>();
         List<String> carParkNumbers = new ArrayList<>();

@@ -562,7 +562,7 @@ class CarParkControllerTest {
     @Test
     void findLocationsNearby() throws Exception {
         availabilityService.sync();
-        
+
         mockMvc.perform(
                 MockMvcRequestBuilders.get("/carparks/nearest?latitude=1.3197296&longitude=103.8421561&page=1&per_page=3"))
             .andDo(print())

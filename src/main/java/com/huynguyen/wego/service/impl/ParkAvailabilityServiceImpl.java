@@ -30,7 +30,7 @@ public class ParkAvailabilityServiceImpl implements ParkAvailabilityService {
     @Override
     public void sync() {
         ZonedDateTime time = ZonedDateTime.now(singaporeClockTime);
-        log.info("start sync data for availability at [{}]", time);
+        log.debug("start sync data for availability at [{}]", time);
         CarParkAvailabilityResponse carParkAvailabilityResponse = client.search(time);
         Map<String, List<CarParkInfo>> carParkInfoMap = carParkAvailabilityResponse.getItems().stream()
             .flatMap(carParkItem -> carParkItem.getCarParkData().stream())

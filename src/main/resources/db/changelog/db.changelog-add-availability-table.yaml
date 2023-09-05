@@ -9,12 +9,20 @@ databaseChangeLog:
               - column:
                   name: car_park_number
                   type: VARCHAR(255)
+                  constraints:
+                    primaryKey: true
               - column:
                   name: type
                   type: VARCHAR(10)
+                  constraints:
+                    nullable: false
               - column:
                   name: total
                   type: INT
+                  constraints:
+                    nullable: false
               - column:
                   name: available
                   type: INT
+                  constraints:
+                    nullable: false
